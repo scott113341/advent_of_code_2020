@@ -3,7 +3,7 @@ mod data;
 use crate::data::Password;
 
 fn main() {
-    let mut input = include_str!("input.txt")
+    let input = include_str!("input.txt")
         .trim()
         .split("\n")
         .map(|s| s.parse::<Password>().unwrap())

@@ -1,5 +1,3 @@
-#![feature(iterator_fold_self)]
-
 use crate::data::Map;
 
 mod data;
@@ -20,6 +18,6 @@ fn part_2(map: &Map) -> usize {
     vec![(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
         .iter()
         .map(|(dx, dy)| map.count_trees(*dx, *dy))
-        .fold_first(|total, this| total * this)
+        .reduce(|total, this| total * this)
         .unwrap()
 }
